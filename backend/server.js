@@ -39,7 +39,7 @@ app.post("/login", async (req, res) => {
 
         //create token
         const token=jwt.sign({email:user.email},process.env.JWT_SECRET)
-        res.json({ message: "login with succes"});
+        res.json({ message: "login with succes",token});
        
     }else{
         res.status(401).json({ message: "email or password not correct" });

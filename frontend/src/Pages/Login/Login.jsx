@@ -29,10 +29,11 @@ function Login() {
     });
     const data =await res.json();
     if(res.ok){
+      localStorage.setItem('token',data.token);
       console.log('login with succes')
-      navigate('/')
+      navigate('/home')
     }else{
-      alert('Login to account  faildes')
+      alert('Login to account failed')
     }
   }
 
